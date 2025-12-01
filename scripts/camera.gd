@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	var goal := player.global_position + offset
+	
 	global_position.x = lerp(global_position.x, goal.x, lerp_amount)
 	global_position.y = lerp(global_position.y, goal.y, lerp_amount)
 	global_position.z = lerp(global_position.z, goal.z, lerp_amount)

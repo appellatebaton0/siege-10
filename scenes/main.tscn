@@ -8,14 +8,14 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tbgi4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sgp6g"]
-size = Vector3(10, 1, 10)
+size = Vector3(40, 1, 40)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
 albedo_color = Color(0.47058824, 0.67058825, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0wfyh"]
 material = SubResource("StandardMaterial3D_o5qli")
-size = Vector3(10, 1, 10)
+size = Vector3(40, 1, 40)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sugp2"]
 
@@ -29,7 +29,7 @@ sky = SubResource("Sky_jyhfs")
 [node name="Main" type="Node"]
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8422225, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1050951, 0)
 script = ExtResource("1_0wfyh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
@@ -51,9 +51,10 @@ environment = SubResource("Environment_tbgi4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.89757407, 0.44086367, 0, -0.44086367, 0.89757407, 0, 3.9209805, 0)
+shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99949723, 0.03170732, 0, -0.03170732, 0.99949723, 10, 10, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 8, 10)
 projection = 1
 size = 16.0
 script = ExtResource("2_sugp2")
