@@ -11,5 +11,14 @@ config_version=5
 [application]
 
 config/name="siege-10"
+run/main_scene="uid://h2yvqc0lxihk"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
