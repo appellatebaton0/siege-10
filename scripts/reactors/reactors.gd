@@ -12,15 +12,16 @@ func _ready() -> void:
 		condition.switched.connect(_on_switch)
 
 func _process(delta: float) -> void:
-	if condition.value(): _while_true()
-	else: _while_false()
+	print()
+	if condition.value(): _while_true(delta)
+	else: _while_false(delta)
 
 func _on_switch(to:bool):
 	if to: _on_true() 
 	else: _on_false()
 
-func _while_true() -> void: pass
-func _while_false() -> void: pass
+func _while_true(_delta:float) -> void: pass
+func _while_false(_delta:float) -> void: pass
 
 func _on_true() -> void: pass
 func _on_false() -> void: pass
