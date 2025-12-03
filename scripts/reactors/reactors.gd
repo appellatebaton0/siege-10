@@ -7,14 +7,16 @@ func _ready() -> void:
 	if condition == null: for child in get_children(): if child is Condition:
 		condition = child
 		break
+	if condition == null: 
+		var parent = get_parent()
+		if parent is Condition: condition = parent
 	
 	if condition != null:
 		condition.switched.connect(_on_switch)
 	
-	if condition.value(): _on_true()
-	else: _on_false()
-	_on_switch(condition.value())
-	print("init as ", condition.value())
+		if condition.value(): _on_true()
+		else: _on_false()
+		_on_switch(condition.value())
 	_once_ready()
 	
 func _process(delta: float) -> void:
