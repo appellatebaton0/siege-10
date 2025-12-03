@@ -1,22 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://h2yvqc0lxihk"]
+[gd_scene load_steps=17 format=3 uid="uid://h2yvqc0lxihk"]
 
-[ext_resource type="PackedScene" uid="uid://b8jhyjr5uxnvt" path="res://scenes/player.tscn" id="1_jyhfs"]
-[ext_resource type="Script" uid="uid://cceeq1vbqri4b" path="res://scripts/camera.gd" id="2_sugp2"]
-[ext_resource type="MeshLibrary" uid="uid://dg2kj44yw2mkl" path="res://assets/resources/gridmap.tres" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://btr2jdlhfi8uk" path="res://scenes/actors/pressure_plate.tscn" id="4_jyhfs"]
-[ext_resource type="Script" uid="uid://bcur1r1rn5dfb" path="res://scripts/conditions/not.gd" id="5_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://ec2ymhm77gj4" path="res://scenes/reactors/wall.tscn" id="5_tefeu"]
-[ext_resource type="Script" uid="uid://7b3fx46xyn03" path="res://scripts/conditions/actor.gd" id="6_o6xl0"]
+[ext_resource type="Script" uid="uid://bsw3k0jy1cfmo" path="res://scripts/main.gd" id="1_choun"]
 [ext_resource type="Script" uid="uid://c6mtkpju5wrlc" path="res://scripts/animation_button.gd" id="8_tipki"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sugp2"]
-
-[sub_resource type="Sky" id="Sky_jyhfs"]
-sky_material = SubResource("ProceduralSkyMaterial_sugp2")
-
-[sub_resource type="Environment" id="Environment_tbgi4"]
-background_mode = 2
-sky = SubResource("Sky_jyhfs")
+[ext_resource type="Script" uid="uid://b2w7ei2uo8osk" path="res://scripts/level_button.gd" id="9_85g3d"]
 
 [sub_resource type="Gradient" id="Gradient_o6xl0"]
 
@@ -27,6 +13,11 @@ gradient = SubResource("Gradient_o6xl0")
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_85g3d"]
 gradient = SubResource("Gradient_tipki")
+
+[sub_resource type="Gradient" id="Gradient_85g3d"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_choun"]
+gradient = SubResource("Gradient_85g3d")
 
 [sub_resource type="Animation" id="Animation_tipki"]
 resource_name = "start_to_levels"
@@ -54,6 +45,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1152, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("InputBlocker:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_85g3d"]
@@ -94,6 +97,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(-1152, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("InputBlocker:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_choun"]
 resource_name = "levels_to_start"
@@ -121,6 +136,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-1152, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("InputBlocker:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_ya4ey"]
@@ -150,6 +177,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1152, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("InputBlocker:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_eb6dy"]
 resource_name = "options_to_start"
@@ -178,10 +217,39 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1152, 0), Vector2(0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("InputBlocker:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_sugp2"]
+resource_name = "levels_to_game"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Level:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -648)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_85g3d"]
 _data = {
 &"RESET": SubResource("Animation_85g3d"),
+&"levels_to_game": SubResource("Animation_sugp2"),
 &"levels_to_start": SubResource("Animation_choun"),
 &"options_to_start": SubResource("Animation_eb6dy"),
 &"start_to_levels": SubResource("Animation_tipki"),
@@ -189,54 +257,7 @@ _data = {
 }
 
 [node name="Main" type="Node"]
-
-[node name="Player" parent="." instance=ExtResource("1_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3830132, 3.0115347, -4.3768363)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_tbgi4")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.89757407, 0.44086367, 0, -0.44086367, 0.89757407, 0, 3.9209805, 0)
-shadow_enabled = true
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 8, 10)
-projection = 1
-size = 20.0
-script = ExtResource("2_sugp2")
-
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("3_sugp2")
-data = {
-"cells": PackedInt32Array(65533, 65533, 131073, 131069, 65533, 0, 65532, 65531, 131073, 65532, 65532, 131073, 65532, 65533, 131073, 65532, 65534, 131073, 65532, 65535, 131073, 65532, 0, 131073, 65532, 1, 131073, 65532, 2, 131073, 65532, 3, 131073, 65532, 4, 131073, 65532, 5, 131073, 65533, 65531, 131073, 65533, 65532, 131073, 65533, 65534, 131073, 65533, 65535, 131073, 65533, 0, 131073, 65533, 1, 131073, 65533, 2, 131073, 65533, 3, 131073, 65533, 4, 131073, 65533, 5, 131073, 65534, 65531, 131073, 65534, 65532, 131073, 65534, 65533, 131073, 65534, 65534, 131073, 65534, 65535, 131073, 65534, 0, 131073, 65534, 1, 131073, 65534, 2, 131073, 65534, 3, 131073, 65534, 4, 131073, 65534, 5, 131073, 65535, 65531, 131073, 65535, 65532, 131073, 65535, 65533, 131073, 65535, 65534, 131073, 65535, 65535, 131073, 65535, 0, 131073, 65535, 1, 131073, 65535, 2, 131073, 65535, 3, 131073, 65535, 4, 131073, 65535, 5, 131073, 0, 65531, 131073, 0, 65532, 131073, 0, 65533, 131073, 0, 65534, 131073, 0, 65535, 131073, 0, 0, 131073, 0, 1, 131073, 0, 2, 131073, 0, 3, 131073, 0, 4, 131073, 0, 5, 131073, 1, 65531, 131073, 1, 65532, 131073, 1, 65533, 131073, 1, 65534, 131073, 1, 65535, 131073, 1, 0, 131073, 1, 1, 131073, 1, 2, 131073, 1, 3, 131073, 1, 4, 131073, 1, 5, 131073, 2, 65531, 131073, 2, 65532, 131073, 2, 65533, 131073, 2, 65534, 131073, 2, 65535, 131073, 2, 0, 131073, 2, 1, 131073, 2, 2, 131073, 2, 3, 131073, 2, 4, 131073, 2, 5, 131073, 3, 65531, 131073, 3, 65532, 131073, 3, 65533, 131073, 3, 65534, 131073, 3, 65535, 131073, 3, 0, 131073, 3, 1, 131073, 3, 2, 131073, 3, 3, 131073, 3, 4, 131073, 3, 5, 131073, 4, 65531, 131073, 4, 65532, 131073, 4, 65533, 131073, 4, 65534, 131073, 4, 65535, 131073, 4, 0, 131073, 4, 1, 131073, 4, 2, 131073, 4, 3, 131073, 4, 4, 131073, 4, 5, 131073, 5, 65531, 131073, 5, 65532, 131073, 5, 65533, 131073, 5, 65534, 131073, 5, 65535, 131073, 5, 0, 131073, 5, 1, 131073, 5, 2, 131073, 5, 3, 131073, 5, 4, 131073, 5, 5, 131073, 6, 65531, 131073, 6, 65532, 131073, 6, 65533, 131073, 6, 65534, 131073, 6, 65535, 131073, 6, 0, 131073, 6, 1, 131073, 6, 2, 131073, 6, 3, 131073, 6, 4, 131073, 6, 5, 131073, 65538, 65533, 0, 65540, 1, 0, 196605, 65533, 131072, 131074, 65533, 131072, 131076, 1, 131072, 65532, 6, 131073, 65533, 6, 131073, 65534, 6, 131073, 65535, 6, 131073, 0, 6, 131073, 1, 6, 131073, 2, 6, 131073, 3, 6, 131073, 4, 6, 131073, 5, 6, 131073, 6, 6, 131073, 131069, 65535, 655360, 196605, 65535, 655362, 262141, 65535, 524288)
-}
-metadata/_editor_floor_ = Vector3(0, 1, 0)
-
-[node name="PressurePlate" parent="." instance=ExtResource("4_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 2.659371)
-
-[node name="NOT" type="Node" parent="." node_paths=PackedStringArray("input")]
-script = ExtResource("5_o6xl0")
-input = NodePath("ACTOR")
-metadata/_custom_type_script = "uid://bcur1r1rn5dfb"
-
-[node name="ACTOR" type="Node" parent="NOT" node_paths=PackedStringArray("actor")]
-script = ExtResource("6_o6xl0")
-actor = NodePath("../../PressurePlate")
-metadata/_custom_type_script = "uid://7b3fx46xyn03"
-
-[node name="Wall" parent="NOT" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.5, 1)
-
-[node name="Wall2" parent="NOT" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.5, 3)
-
-[node name="Wall3" parent="NOT" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.5, 5)
-
-[node name="Wall4" parent="NOT" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.5, 7)
+script = ExtResource("1_choun")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -291,6 +312,7 @@ custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
+focus_mode = 0
 theme_override_font_sizes/font_size = 36
 text = "LEVELS"
 script = ExtResource("8_tipki")
@@ -301,6 +323,7 @@ custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
+focus_mode = 0
 theme_override_font_sizes/font_size = 36
 text = "OPTIONS"
 script = ExtResource("8_tipki")
@@ -346,6 +369,63 @@ layout_mode = 2
 size_flags_vertical = 3
 columns = 3
 
+[node name="LevelButton" type="TextureRect" parent="CanvasLayer/UI/Level/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("9_85g3d")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/Level/MarginContainer/VBoxContainer/GridContainer/LevelButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Button" type="Button" parent="CanvasLayer/UI/Level/MarginContainer/VBoxContainer/GridContainer/LevelButton/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 70
+text = "0"
+script = ExtResource("8_tipki")
+animation_name = "levels_to_game"
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/UI/Level/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_choun")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/UI/Level/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_choun")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/UI/Level/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_choun")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/UI/Level/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_choun")
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/UI/Level/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_choun")
+
 [node name="Button" type="Button" parent="CanvasLayer/UI/Level"]
 custom_minimum_size = Vector2(90, 100)
 layout_mode = 1
@@ -359,6 +439,7 @@ offset_bottom = 50.0
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+focus_mode = 0
 script = ExtResource("8_tipki")
 animation_name = "levels_to_start"
 
@@ -372,6 +453,32 @@ offset_right = -1152.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_85g3d")
+
+[node name="Button" type="Button" parent="CanvasLayer/UI/Options"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1038.0
+offset_top = -50.0
+offset_right = 1128.0
+offset_bottom = 50.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 0
+script = ExtResource("8_tipki")
+animation_name = "options_to_start"
+
+[node name="InputBlocker" type="Control" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/UI"]
 libraries = {

@@ -3,7 +3,7 @@ class_name AnimationButton extends Button
 @export var animation_name := ""
 
 @onready var anim := get_anim()
-func get_anim(with:Node = self, depth := 7) -> AnimationPlayer:
+func get_anim(with:Node = self, depth := 14) -> AnimationPlayer:
 	
 	if depth == 0 or with == null: return null
 	
