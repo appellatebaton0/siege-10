@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b70jvj7o7auhk"
-path.s3tc="res://.godot/imported/floor_texture.png-6292bc98efbb2a45ae327eb5f503f61c.s3tc.ctex"
+uid="uid://uqwjkc5lukvv"
+path.s3tc="res://.godot/imported/pillar_middle_texture.png-75d71962ef72e5204c1ac75f71c57dd2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f0d05e9ac48ffc3704fea8642b23bd58"
+"md5": "8247ab63870613e9c2954fec8c986a1b"
 }
 
 [deps]
 
-source_file="res://assets/models/floor_texture.png"
-dest_files=["res://.godot/imported/floor_texture.png-6292bc98efbb2a45ae327eb5f503f61c.s3tc.ctex"]
+source_file="res://assets/models/pillar_middle_texture.png"
+dest_files=["res://.godot/imported/pillar_middle_texture.png-75d71962ef72e5204c1ac75f71c57dd2.s3tc.ctex"]
 
 [params]
 
