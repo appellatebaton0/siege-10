@@ -33,7 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3830132, 3.0115347, -4.376
 environment = SubResource("Environment_tbgi4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.89757407, 0.44086367, 0, -0.44086367, 0.89757407, 0, 3.9209805, 0)
+transform = Transform3D(0.5, 0.38179916, -0.77732193, 0, 0.89757407, 0.44086367, 0.8660254, -0.22043183, 0.44878703, 0, 3.9209805, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 40, 50)
