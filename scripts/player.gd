@@ -7,6 +7,7 @@ class_name Player extends CharacterBody3D
 
 func _init() -> void: Global.player = self
 
+var next:Vector3
 func _physics_process(delta: float) -> void:
 	
 	# Gravity
@@ -14,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	
-	var next = camera.basis * max_speed * Vector3(direction.x, 0, direction.y)
+	next = camera.basis * max_speed * Vector3(direction.x, 0, direction.y)
 	velocity.x = move_toward(velocity.x, next.x, delta * acceleration)
 	velocity.z = move_toward(velocity.z, next.z, delta * acceleration)
 	
