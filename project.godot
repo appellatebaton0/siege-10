@@ -59,3 +59,4 @@ Down={
 3d_physics/layer_5="Wall"
 3d_physics/layer_6="Crate"
 3d_physics/layer_7="Lever"
+3d_physics/layer_8="Goal"

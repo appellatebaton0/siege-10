@@ -5,6 +5,7 @@ const LEVELS_PATH := "res://scenes/levels/"
 var player:Player
 var camera:Camera
 var main:Main
+var animator:AnimationPlayer
 
 var level_scenes := get_level_scenes()
 func get_level_scenes(path := LEVELS_PATH) -> Array[PackedScene]:

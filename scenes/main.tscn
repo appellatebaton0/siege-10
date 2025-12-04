@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://h2yvqc0lxihk"]
+[gd_scene load_steps=17 format=3 uid="uid://h2yvqc0lxihk"]
 
 [ext_resource type="Script" uid="uid://bsw3k0jy1cfmo" path="res://scripts/main.gd" id="1_choun"]
 [ext_resource type="Script" uid="uid://cam6ar2x0kgwk" path="res://scripts/level_container.gd" id="3_jyhfs"]
@@ -280,6 +280,13 @@ _data = {
 &"start_to_options": SubResource("Animation_ya4ey")
 }
 
+[sub_resource type="GDScript" id="GDScript_sugp2"]
+resource_name = "animation_player"
+script/source = "extends AnimationPlayer
+
+func _init() -> void: Global.animator = self
+"
+
 [node name="Main" type="Node"]
 script = ExtResource("1_choun")
 
@@ -298,8 +305,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1152.0
-offset_right = -1152.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_tipki")
@@ -360,6 +365,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1152.0
+offset_right = 1152.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_85g3d")
@@ -455,3 +462,4 @@ grow_vertical = 2
 libraries = {
 &"": SubResource("AnimationLibrary_85g3d")
 }
+script = SubResource("GDScript_sugp2")
