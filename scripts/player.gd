@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, next.x, delta * acceleration)
 	velocity.z = move_toward(velocity.z, next.z, delta * acceleration)
 	
-	if not global_transform.origin.is_equal_approx(global_position + velocity.slide(Vector3.UP)):
-		look_at(global_position + velocity.slide(Vector3.UP))
+	if next != Vector3.ZERO and not global_transform.origin.is_equal_approx(global_position + velocity.slide(Vector3.UP)):
+		look_at(global_position + next.slide(Vector3.UP))
 	
 	move_and_slide()

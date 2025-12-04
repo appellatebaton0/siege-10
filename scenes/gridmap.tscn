@@ -82,7 +82,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yblac")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oppen"]
-size = Vector3(2, 2, 2)
+size = Vector3(2, 52, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oppen"]
 albedo_color = Color(0.20392157, 0.34901962, 0.7137255, 1)
@@ -166,6 +166,7 @@ points = PackedVector3Array(-1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1
 [node name="Gridmap" type="Node3D"]
 
 [node name="PillarBottom" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("ArrayMesh_ykufx")
 skeleton = NodePath("")
 
@@ -180,13 +181,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.875, 0)
 shape = SubResource("BoxShape3D_ykufx")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("ArrayMesh_2qjf2")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25, 0)
 shape = SubResource("BoxShape3D_oppen")
 
 [node name="PillarMiddle" type="MeshInstance3D" parent="."]
