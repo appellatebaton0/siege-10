@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://h2yvqc0lxihk"]
+[gd_scene load_steps=20 format=3 uid="uid://h2yvqc0lxihk"]
 
 [ext_resource type="Script" uid="uid://bsw3k0jy1cfmo" path="res://scripts/main.gd" id="1_choun"]
 [ext_resource type="Script" uid="uid://cam6ar2x0kgwk" path="res://scripts/level_container.gd" id="3_jyhfs"]
+[ext_resource type="Shader" uid="uid://b4xqk77xgiard" path="res://shaders/percentage.gdshader" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://c6mtkpju5wrlc" path="res://scripts/animation_button.gd" id="8_tipki"]
 
 [sub_resource type="Gradient" id="Gradient_o6xl0"]
@@ -13,6 +14,14 @@ gradient = SubResource("Gradient_o6xl0")
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_85g3d"]
 gradient = SubResource("Gradient_tipki")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbgi4"]
+shader = ExtResource("4_jyhfs")
+shader_parameter/threshold = 0.69
+shader_parameter/affect_x = false
+shader_parameter/flip_x = false
+shader_parameter/affect_y = true
+shader_parameter/flip_y = false
 
 [sub_resource type="Animation" id="Animation_tipki"]
 resource_name = "start_to_levels"
@@ -269,10 +278,14 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_tefeu"]
+resource_name = "game_to_reset"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_85g3d"]
 _data = {
 &"RESET": SubResource("Animation_85g3d"),
 &"game_to_levels": SubResource("Animation_jyhfs"),
+&"game_to_reset": SubResource("Animation_tefeu"),
 &"levels_to_game": SubResource("Animation_sugp2"),
 &"levels_to_start": SubResource("Animation_choun"),
 &"options_to_start": SubResource("Animation_eb6dy"),
@@ -448,6 +461,15 @@ size_flags_vertical = 4
 focus_mode = 0
 script = ExtResource("8_tipki")
 animation_name = "options_to_start"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UI"]
+material = SubResource("ShaderMaterial_tbgi4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="InputBlocker" type="Control" parent="CanvasLayer/UI"]
 visible = false
