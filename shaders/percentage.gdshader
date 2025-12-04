@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float threshold = 0.5;
+uniform float threshold = 0;
 uniform bool affect_x = true;
 uniform bool flip_x = false;
 uniform bool affect_y = true;

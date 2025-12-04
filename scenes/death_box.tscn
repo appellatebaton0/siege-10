@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cxiq37tq0mcyg" path="res://scripts/death_box.gd" id="1_1372o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x65h5"]
-size = Vector3(70, 10, 60)
+size = Vector3(150, 10, 150)
 
 [node name="DeathBox" type="Area3D"]
 collision_layer = 256

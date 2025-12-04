@@ -16,4 +16,7 @@ func _ready() -> void:
 func _on_pressed():
 	var new:Node = level_scene.instantiate()
 	
+	Global.set_level_to(new)
+	Global.current_level_scene = level_scene
+	
 	main.add_child(new)

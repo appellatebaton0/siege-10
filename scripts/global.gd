@@ -6,6 +6,8 @@ var player:Player
 var camera:Camera
 var main:Main
 var animator:AnimationPlayer
+var current_level:Node
+var current_level_scene:PackedScene
 
 var level_scenes := get_level_scenes()
 func get_level_scenes(path := LEVELS_PATH) -> Array[PackedScene]:
@@ -25,3 +27,8 @@ func get_level_scenes(path := LEVELS_PATH) -> Array[PackedScene]:
 		print("An error occurred when trying to access the path.")
 	
 	return response
+
+func set_level_to(to:Node):
+	if current_level != null:
+		current_level.queue_free()
+	current_level = to
