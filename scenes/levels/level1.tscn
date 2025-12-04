@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://lwxjbiidfp56"]
+[gd_scene load_steps=12 format=3 uid="uid://lwxjbiidfp56"]
 
 [ext_resource type="PackedScene" uid="uid://b8jhyjr5uxnvt" path="res://scenes/player.tscn" id="1_mbbpy"]
 [ext_resource type="Script" uid="uid://cceeq1vbqri4b" path="res://scripts/camera.gd" id="2_ouxo3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://btr2jdlhfi8uk" path="res://scenes/actors/pressure_plate.tscn" id="4_rmjfq"]
 [ext_resource type="Script" uid="uid://bcur1r1rn5dfb" path="res://scripts/conditions/not.gd" id="5_7pb6i"]
 [ext_resource type="Script" uid="uid://7b3fx46xyn03" path="res://scripts/conditions/actor.gd" id="6_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://notyk53qj2in" path="res://scenes/reactors/goal.tscn" id="7_8a7m2"]
 [ext_resource type="PackedScene" uid="uid://ec2ymhm77gj4" path="res://scenes/reactors/wall.tscn" id="7_qogh7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sugp2"]
@@ -54,6 +55,9 @@ metadata/_custom_type_script = "uid://bcur1r1rn5dfb"
 script = ExtResource("6_xfk5q")
 actor = NodePath("../../PressurePlate")
 metadata/_custom_type_script = "uid://7b3fx46xyn03"
+
+[node name="Goal" parent="NOT/ACTOR" instance=ExtResource("7_8a7m2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.061655, 2.8, 4.624997)
 
 [node name="Wall" parent="NOT" instance=ExtResource("7_qogh7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.5, 1)

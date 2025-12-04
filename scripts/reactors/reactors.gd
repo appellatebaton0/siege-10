@@ -2,6 +2,7 @@
 # Has built-ins for when a provided condition changes states.
 
 @export var condition:Condition
+var current_value:bool
 
 func _ready() -> void:
 	if condition == null: for child in get_children(): if child is Condition:
@@ -25,6 +26,8 @@ func _process(delta: float) -> void:
 	_active(delta)
 
 func _on_switch(to:bool):
+	current_value = to
+	
 	if to: _on_true() 
 	else: _on_false()
 
