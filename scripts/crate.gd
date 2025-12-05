@@ -14,4 +14,4 @@ func _physics_process(delta: float) -> void:
 		var push_direction = player.global_position.direction_to(global_position).slide(Vector3.UP)
 		var dist = player.global_position.slide(Vector3.UP).distance_to(global_position.slide(Vector3.UP))
 		
-		apply_force(30 * (player.next))
+		apply_force(dist * (player.next.slide(Vector3.UP)))
