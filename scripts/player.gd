@@ -11,7 +11,7 @@ var next:Vector3
 func _physics_process(delta: float) -> void:
 	
 	# Gravity
-	if not is_on_floor(): velocity += get_gravity() * delta
+	if not is_on_floor(): velocity += get_gravity() * delta * 5.0
 	
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	

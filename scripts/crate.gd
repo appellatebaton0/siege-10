@@ -1,19 +1,23 @@
 class_name Crate extends RigidBody3D
 
+@onready var player_stopper := $StaticBody3D/CollisionShape3D
+
 @export var touch_buffer = 0.1
 var touch_time = 0.0
 
 @onready var player := Global.player
 
-func _physics_process(delta: float) -> void:
+func _by_dist_to_player(a:Node3D, b:Node3D):
+	var a_dist = a.global_position.distance_to(player.global_position)
+	var b_dist = b.global_position.distance_to(player.global_position)
+	return a_dist < b_dist
+
+func _physics_process(_delta: float) -> void:
 	
-	var bodies = get_colliding_bodies()
 	
-	touch_time = move_toward(touch_time, 0, delta)
-	if bodies.has(player): touch_time = touch_buffer
+	player_stopper.disabled = not $WallCheck.is_colliding()
 	
-	
-	if touch_time > 0 and abs(player.global_position.y - global_position.y) < 1:
+	if get_colliding_bodies().has(player) and abs(player.global_position.y - global_position.y) < 1:
 		var dist = player.global_position.slide(Vector3.UP).distance_to(global_position.slide(Vector3.UP))
 		
 		apply_force(dist * (player.next.slide(Vector3.UP)))
