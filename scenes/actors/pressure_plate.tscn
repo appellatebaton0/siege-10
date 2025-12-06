@@ -1,12 +1,134 @@
-[gd_scene load_steps=4 format=3 uid="uid://btr2jdlhfi8uk"]
+[gd_scene load_steps=14 format=4 uid="uid://btr2jdlhfi8uk"]
 
 [ext_resource type="Script" uid="uid://c7bsrh40uxaci" path="res://scripts/actors/pressure_plate.gd" id="1_cy0dw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uv2xg"]
-size = Vector3(2, 0.2, 2)
+size = Vector3(2, 0.25734863, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vv03j"]
+albedo_color = Color(0.6, 0.29580003, 0.13200003, 1)
+metallic_specular = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_du2hu"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 0.125, 2),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAQABAAIAAgAAAAAAAgACAAAAAQACAAIAAQADAAIAAgADAAQAAgAEAAAABAADAAUAAQAFAAMABAAFAAYAAAAEAAYABwAGAAUAAAAGAAcABwAFAAEAAAAAAAcAAAAHAAEAAAAHAAcABwABAAEABwAHAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AACAvwAAAAAAAIA/AACAPwAAAAAAAIC/AACAvwAAAAAAAIC/AACAvwAAAD4AAIC/AACAvwAAAD4AAIA/AACAPwAAAD4AAIC/AACAPwAAAD4AAIA/AACAPwAAAAAAAIA/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i4n8p"]
+resource_name = "pressure_plate_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 0.125, 2),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAAAAAACAPw=="),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACgAJAAsACAAMAAkACgALAA0ADgAMAAgADQALAA8ADgAPAAwADQAPAA4AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0A"),
+"material": SubResource("StandardMaterial3D_vv03j"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AACAvwAAAAAAAIA/AACAPwAAAAAAAIC/AACAvwAAAAAAAIC/AACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAAD4AAIC/AACAPwAAAAAAAIC/AACAPwAAAD4AAIA/AACAPwAAAAAAAIA/AACAPwAAAAAAAIC/AACAPwAAAAAAAIC/AACAvwAAAAAAAIC/AACAPwAAAAAAAIA/AACAvwAAAAAAAIC/AACAvwAAAAAAAIA/AACAvwAAAAAAAIA/AACAvwAAAD4AAIA/AACAPwAAAD4AAIC/AACAPwAAAD4AAIA/AACAvwAAAD4AAIC/AACAvwAAAAAAAIC/AACAvwAAAD4AAIA/AACAvwAAAAAAAIA/AACAvwAAAD4AAIC/AACAPwAAAAAAAIC/AACAvwAAAD4AAIC/AACAvwAAAAAAAIC/AACAPwAAAD4AAIC/AACAvwAAAAAAAIA/AACAPwAAAD4AAIA/AACAPwAAAAAAAIA/AACAvwAAAD4AAIA//38AAP///z//fwAA////P/9/AAD///8//38AAP///z////9/////v////3////+/////f////7////9/////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//////////7//////////v/////////+//////////7//f/9/////P/9//3////8//3//f////z//f/9/////Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_du2hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oom5t"]
+albedo_color = Color(1, 0.48000002, 0.19999999, 1)
+metallic_specular = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dh3e0"]
+_surfaces = [{
+"aabb": AABB(-0.875, 0.125, -0.875, 1.75, 0.125, 1.75),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAAEAAEAAgADAAUAAgAFAAAAAAAGAAQAAAAFAAYABAAHAAEAAQAHAAMABAAGAAcABQADAAcABQAHAAYA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AABgvwAAAD4AAGA/AABgPwAAAD4AAGC/AABgvwAAAD4AAGC/AABgvwAAgD4AAGC/AABgPwAAAD4AAGA/AABgvwAAgD4AAGA/AABgPwAAgD4AAGA/AABgPwAAgD4AAGC/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qhlin"]
+resource_name = "pressure_plate_Plane_001"
+_surfaces = [{
+"aabb": AABB(-0.875, 0.125, -0.875, 1.75, 0.125, 1.75),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_oom5t"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AABgvwAAAD4AAGA/AABgPwAAAD4AAGC/AABgvwAAAD4AAGC/AABgPwAAAD4AAGA/AABgvwAAgD4AAGA/AABgPwAAgD4AAGC/AABgPwAAgD4AAGA/AABgvwAAgD4AAGC/AABgPwAAAD4AAGA/AABgPwAAgD4AAGC/AABgPwAAAD4AAGC/AABgPwAAgD4AAGA/AABgvwAAAD4AAGC/AABgvwAAgD4AAGA/AABgvwAAAD4AAGA/AABgvwAAgD4AAGC/AABgPwAAAD4AAGC/AABgvwAAgD4AAGC/AABgvwAAAD4AAGC/AABgPwAAgD4AAGC/AABgvwAAAD4AAGA/AABgPwAAgD4AAGA/AABgPwAAAD4AAGA/AABgvwAAgD4AAGA//38AAP///z//fwAA////P/9/AAD///8//38AAP///z//f///////v/9///////+//3///////7//f///////v////3////+/////f////7////9/////v////3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//////////v/////////+//////////7//////////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_dh3e0")
 
 [sub_resource type="BoxMesh" id="BoxMesh_24wwx"]
-size = Vector3(2, 0.2, 2)
+size = Vector3(1.8, 0.2, 1.8)
+
+[sub_resource type="Animation" id="Animation_cy0dw"]
+resource_name = "down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.1, 0), Vector3(0, -0.22, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m38x0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ivwnm"]
+resource_name = "up"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.22, 0), Vector3(0, -0.1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lq0vt"]
+_data = {
+&"RESET": SubResource("Animation_m38x0"),
+&"down": SubResource("Animation_cy0dw"),
+&"up": SubResource("Animation_ivwnm")
+}
 
 [node name="PressurePlate" type="Area3D"]
 collision_layer = 12
@@ -14,10 +136,31 @@ collision_mask = 34
 script = ExtResource("1_cy0dw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
 shape = SubResource("BoxShape3D_uv2xg")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="Plate" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("ArrayMesh_i4n8p")
+skeleton = NodePath("")
+
+[node name="Button" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("ArrayMesh_qhlin")
+skeleton = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_24wwx")
+
+[node name="pressure_plate" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15045291, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lq0vt")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
