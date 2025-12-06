@@ -39,7 +39,7 @@ var reset_timer = 0.0
 
 func _process(delta: float) -> void:
 	if current_level != null:
-		reset_timer = move_toward(reset_timer, reset_time if Input.is_action_pressed("Reset") else 0, delta)
+		reset_timer = move_toward(reset_timer, reset_time if Input.is_action_pressed("Reset") else 0.0, delta)
 		if reset_timer >= reset_time:
 			Global.animator.play("game_to_reset")
 			reset_timer = 0.0

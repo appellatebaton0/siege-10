@@ -20,6 +20,18 @@ func _physics_process(delta: float) -> void:
 	velocity.z = move_toward(velocity.z, next.z, delta * acceleration)
 	
 	if next != Vector3.ZERO and not global_transform.origin.is_equal_approx(global_position + velocity.slide(Vector3.UP)):
+		var look:Vector3
+		var curr:Vector3
+		
+		curr = global_rotation
 		look_at(global_position + next.slide(Vector3.UP))
+		look = global_rotation
+		
+		if abs(look.y - curr.y) >= deg_to_rad(270):
+			curr.y += deg_to_rad(360) * abs(look.y - curr.y) / (look.y - curr.y)
+	
+		#global_rotation.x = move_toward(curr.x, look.x, rot_speed * delta)
+		global_rotation.y = lerp(curr.y, look.y, 0.4)
+		#global_rotation.z = move_toward(curr.z, look.z, rot_speed * delta)
 	
 	move_and_slide()

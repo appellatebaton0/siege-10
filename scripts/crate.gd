@@ -7,11 +7,13 @@ var touch_time = 0.0
 
 func _physics_process(delta: float) -> void:
 	
-	touch_time = move_toward(touch_time, 0, delta)
-	if get_colliding_bodies().has(player): touch_time = touch_buffer
+	var bodies = get_colliding_bodies()
 	
-	if get_colliding_bodies().has(player) and abs(player.global_position.y - global_position.y) < 1:
-		var push_direction = player.global_position.direction_to(global_position).slide(Vector3.UP)
+	touch_time = move_toward(touch_time, 0, delta)
+	if bodies.has(player): touch_time = touch_buffer
+	
+	
+	if touch_time > 0 and abs(player.global_position.y - global_position.y) < 1:
 		var dist = player.global_position.slide(Vector3.UP).distance_to(global_position.slide(Vector3.UP))
 		
 		apply_force(dist * (player.next.slide(Vector3.UP)))
