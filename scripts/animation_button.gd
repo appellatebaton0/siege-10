@@ -1,4 +1,4 @@
-class_name AnimationButton extends Button
+class_name AnimationButton extends BaseButton
 
 @export var animation_name := ""
 

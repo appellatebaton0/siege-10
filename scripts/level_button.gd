@@ -1,4 +1,4 @@
-class_name LevelButton extends TextureRect
+class_name LevelButton extends Panel
 
 @export var level_index := 0
 
