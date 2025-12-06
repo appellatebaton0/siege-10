@@ -165,7 +165,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oppen")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ykufx"]
-points = PackedVector3Array(-1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1)
+points = PackedVector3Array(-1, 1.05, 1, -1, 1.05, -1, -1, -1, -1, -1, -1, 1, 1.05, -1, 1, 1.05, -1, -1)
 
 [node name="Gridmap" type="Node3D"]
 
@@ -185,6 +185,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.875, 0)
 shape = SubResource("BoxShape3D_ykufx")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("ArrayMesh_2qjf2")
 skeleton = NodePath("")
 
@@ -205,7 +206,6 @@ skeleton = NodePath("")
 shape = SubResource("BoxShape3D_f4w8n")
 
 [node name="Slope" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("ArrayMesh_f4w8n")
 skeleton = NodePath("")
 
