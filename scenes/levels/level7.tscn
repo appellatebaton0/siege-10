@@ -23,7 +23,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0797615, 3.250002, 5.3046517)
 
 [node name="Goal" parent="." index="6" instance=ExtResource("4_rge87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -5)
 
 [node name="STATIC" type="Node" parent="Goal" index="6"]
 script = ExtResource("5_emhfo")

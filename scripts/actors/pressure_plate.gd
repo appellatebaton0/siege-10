@@ -8,6 +8,7 @@ var time := 0.0
 func _on_body_entered(_body: Node3D) -> void: 
 	value = true
 	anim.play("down")
+	$GPUParticles3D.restart()
 func _on_body_exited(_body: Node3D) -> void:
 	time = stand_time
 
@@ -19,5 +20,6 @@ func _process(delta: float) -> void:
 		
 		value = false
 		anim.play("up")
+		$GPUParticles3D.restart()
 		
 		time = -1
