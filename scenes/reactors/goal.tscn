@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://notyk53qj2in"]
+[gd_scene load_steps=26 format=4 uid="uid://notyk53qj2in"]
 
 [ext_resource type="Script" uid="uid://b4738pauna5wp" path="res://scripts/reactors/goal.gd" id="1_urwac"]
 
@@ -169,7 +169,73 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_urwac"]
 size = Vector3(1.25, 1.8754883, 1.25)
 
-[node name="Goal" type="Area3D"]
+[sub_resource type="Curve" id="Curve_7c8jl"]
+_limits = [0.0, 62.32, 0.0, 1.0]
+_data = [Vector2(0, 32.51985), 0.0, 0.0, 0, 0, Vector2(0.090342686, 6.760399), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ro5s5"]
+curve = SubResource("Curve_7c8jl")
+
+[sub_resource type="Curve" id="Curve_urwac"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.07476635, 1), 0.0, 0.0, 0, 0, Vector2(0.6105919, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_7c8jl"]
+curve = SubResource("Curve_urwac")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ro5s5"]
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+orbit_velocity_min = 1.9220002
+orbit_velocity_max = 2.0000002
+radial_velocity_min = 0.99997765
+radial_velocity_max = 0.99997765
+radial_velocity_curve = SubResource("CurveTexture_ro5s5")
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_7c8jl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gs07"]
+transparency = 1
+albedo_color = Color(0.87060004, 0.459, 0.9, 0.19215687)
+emission_enabled = true
+emission = Color(3.5297933, 0.7165021, 3.7307422, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pp11c"]
+material = SubResource("StandardMaterial3D_5gs07")
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="Curve" id="Curve_ro5s5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5gs07"]
+curve = SubResource("Curve_ro5s5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pp11c"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 2.5
+emission_ring_radius = 0.72
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.0000021
+radial_accel_max = -2.0000021
+scale_min = 0.59999996
+scale_max = 1.4
+scale_curve = SubResource("CurveTexture_5gs07")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhm7i"]
+transparency = 1
+albedo_color = Color(1, 0.39999998, 0.39999998, 0.43137255)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s82q5"]
+material = SubResource("StandardMaterial3D_jhm7i")
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="Goal" type="Area3D" groups=["Goal"]]
 collision_layer = 128
 collision_mask = 2
 script = ExtResource("1_urwac")
@@ -206,5 +272,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_urwac")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 256
+lifetime = 5.0
+one_shot = true
+explosiveness = 0.97
+process_material = SubResource("ParticleProcessMaterial_ro5s5")
+draw_pass_1 = SubResource("BoxMesh_pp11c")
+
+[node name="PlayerParts" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 128
+lifetime = 1.59
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_pp11c")
+draw_pass_1 = SubResource("BoxMesh_s82q5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

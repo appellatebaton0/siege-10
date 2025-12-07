@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://h2yvqc0lxihk"]
+[gd_scene load_steps=30 format=3 uid="uid://h2yvqc0lxihk"]
 
 [ext_resource type="Script" uid="uid://bsw3k0jy1cfmo" path="res://scripts/main.gd" id="1_choun"]
 [ext_resource type="Texture2D" uid="uid://dks7n410r0uk8" path="res://assets/textures/start_screen.png" id="2_o6xl0"]
@@ -131,12 +131,12 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-80.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_jyhfs"]
 resource_name = "game_to_levels"
-length = 0.7
+length = 1.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -144,7 +144,7 @@ tracks/0/path = NodePath("Level:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
+"times": PackedFloat32Array(0.7, 1.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, -648), Vector2(0, 0)]
@@ -156,7 +156,7 @@ tracks/1/path = NodePath("InputBlocker:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7),
+"times": PackedFloat32Array(0.7, 1.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -394,22 +394,6 @@ tracks/2/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_trceg"]
-resource_name = "start"
-length = 0.608
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../AudioStreamPlayer:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.53333336),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-80.0, 0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_85g3d"]
 _data = {
 &"RESET": SubResource("Animation_85g3d"),
@@ -419,7 +403,6 @@ _data = {
 &"levels_to_start": SubResource("Animation_choun"),
 &"options_to_start": SubResource("Animation_eb6dy"),
 &"reset_to_game": SubResource("Animation_o6xl0"),
-&"start": SubResource("Animation_trceg"),
 &"start_to_levels": SubResource("Animation_tipki"),
 &"start_to_options": SubResource("Animation_ya4ey")
 }
@@ -695,12 +678,10 @@ grow_vertical = 2
 libraries = {
 &"": SubResource("AnimationLibrary_85g3d")
 }
-autoplay = "start"
 script = ExtResource("5_tbgi4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_eb6dy")
-volume_db = -80.0
 autoplay = true
 bus = &"Music"
 

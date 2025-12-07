@@ -15,6 +15,7 @@ sky_material = SubResource("ProceduralSkyMaterial_5ntmo")
 [sub_resource type="Environment" id="Environment_tbgi4"]
 background_mode = 2
 sky = SubResource("Sky_jyhfs")
+glow_enabled = true
 
 [node name="LevelBase" type="Node"]
 

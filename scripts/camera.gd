@@ -12,8 +12,15 @@ func _ready() -> void:
 	look_at(player.global_position)
 
 func _process(_delta: float) -> void:
-	var goal := player.global_position + offset
+	var goal:Vector3
+	if player != null:
+		goal = player.global_position + offset
+	else:
+		goal = get_tree().get_first_node_in_group("Goal").global_position + offset
+		lerp_amount = 0.02
+		
 	
-	global_position.x = lerp(global_position.x, goal.x, lerp_amount)
-	global_position.y = lerp(global_position.y, goal.y, lerp_amount)
-	global_position.z = lerp(global_position.z, goal.z, lerp_amount)
+	if goal != null:
+		global_position.x = lerp(global_position.x, goal.x, lerp_amount)
+		global_position.y = lerp(global_position.y, goal.y, lerp_amount)
+		global_position.z = lerp(global_position.z, goal.z, lerp_amount)
