@@ -1,6 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bua6007vadqyo"]
+[gd_scene load_steps=9 format=4 uid="uid://bua6007vadqyo"]
 
 [ext_resource type="Script" uid="uid://43c613iv5km" path="res://scripts/crate.gd" id="1_b66cd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b66cd"]
+friction = 3.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ntmo"]
 size = Vector3(1.5, 1.5, 1.5)
@@ -58,6 +61,8 @@ collision_priority = 3.0
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_b66cd")
 can_sleep = false
 contact_monitor = true
 max_contacts_reported = 32
