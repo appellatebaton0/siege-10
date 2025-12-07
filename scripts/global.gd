@@ -9,6 +9,8 @@ var animator:AnimationPlayer
 var current_level:Node
 var current_level_scene:PackedScene
 
+var level_beat_index := 0
+
 var level_scenes := get_level_scenes()
 func get_level_scenes(path := LEVELS_PATH) -> Array[PackedScene]:
 	var response:Array[PackedScene]

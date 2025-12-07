@@ -13,6 +13,9 @@ func _ready() -> void:
 	button.text = str(level_index + 1)
 	button.pressed.connect(_on_pressed)
 
+func _process(delta: float) -> void:
+	$MarginContainer/Button.disabled = Global.level_beat_index < level_index
+
 func _on_pressed():
 	var new:Node = level_scene.instantiate()
 	

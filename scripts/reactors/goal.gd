@@ -24,4 +24,7 @@ func _on_body_entered(body: Node3D) -> void:
 		$GPUParticles3D.emitting = true
 		$AudioStreamPlayer3D.play()
 		
+		print(Global.level_scenes.find(Global.current_level_scene))
+		Global.level_beat_index = max(Global.level_beat_index, 1 + Global.level_scenes.find(Global.current_level_scene))
+		
 		
