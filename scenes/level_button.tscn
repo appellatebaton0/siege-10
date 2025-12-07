@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg5mc4ju1scu6"]
+[gd_scene load_steps=10 format=3 uid="uid://bg5mc4ju1scu6"]
 
 [ext_resource type="Script" uid="uid://b2w7ei2uo8osk" path="res://scripts/level_button.gd" id="1_o8246"]
 [ext_resource type="Script" uid="uid://c6mtkpju5wrlc" path="res://scripts/animation_button.gd" id="2_hrusj"]
+[ext_resource type="AudioStream" uid="uid://qcee6rbq01lo" path="res://assets/sfx/button_down.wav" id="3_6g3el"]
+[ext_resource type="AudioStream" uid="uid://btnsqp0jicft2" path="res://assets/sfx/button_up.wav" id="4_ium1h"]
 
 [sub_resource type="Theme" id="Theme_o8246"]
 Panel/styles/panel = null
@@ -50,3 +52,12 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ium1h")
 text = "0"
 script = ExtResource("2_hrusj")
 animation_name = "levels_to_game"
+
+[node name="DOWN" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6g3el")
+
+[node name="UP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ium1h")
+
+[connection signal="button_down" from="MarginContainer/Button" to="DOWN" method="play"]
+[connection signal="button_up" from="MarginContainer/Button" to="UP" method="play"]
