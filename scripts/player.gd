@@ -5,6 +5,8 @@ class_name Player extends CharacterBody3D
 
 @onready var camera:Camera = Global.camera
 
+var walk_timer := 0.0
+
 func _init() -> void: Global.player = self
 
 var next:Vector3
@@ -18,6 +20,11 @@ func _physics_process(delta: float) -> void:
 	next = camera.basis * max_speed * Vector3(direction.x, 0, direction.y)
 	velocity.x = move_toward(velocity.x, next.x, delta * acceleration)
 	velocity.z = move_toward(velocity.z, next.z, delta * acceleration)
+	
+	walk_timer = move_toward(walk_timer, 0, delta)
+	if direction and walk_timer == 0: 
+		$AudioStreamPlayer3D.play()
+		walk_timer = 0.25
 	
 	if next != Vector3.ZERO and not global_transform.origin.is_equal_approx(global_position + velocity.slide(Vector3.UP)):
 		var look:Vector3
