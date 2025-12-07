@@ -724,6 +724,7 @@ stream_0/stream = ExtResource("13_jkv2x")
 script = ExtResource("1_choun")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="UI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -800,8 +801,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1152.0
-offset_right = 1152.0
+offset_top = -648.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_tipki")
@@ -902,9 +903,9 @@ theme = SubResource("Theme_a8y0u")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UI/Reset"]
 layout_mode = 0
-offset_top = 648.0
+offset_top = 562.14014
 offset_right = 144.0
-offset_bottom = 1296.0004
+offset_bottom = 1210.1405
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/Reset/Panel"]
@@ -917,9 +918,9 @@ texture = SubResource("GradientTexture2D_jkv2x")
 [node name="Panel2" type="Panel" parent="CanvasLayer/UI/Reset"]
 layout_mode = 0
 offset_left = 144.0
-offset_top = 648.0
+offset_top = 585.26666
 offset_right = 288.0
-offset_bottom = 1295.999
+offset_bottom = 1233.2656
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/Reset/Panel2"]
@@ -932,9 +933,9 @@ texture = SubResource("GradientTexture2D_jkv2x")
 [node name="Panel3" type="Panel" parent="CanvasLayer/UI/Reset"]
 layout_mode = 0
 offset_left = 288.0
-offset_top = 648.0
+offset_top = 520.5267
 offset_right = 432.0
-offset_bottom = 1296.0012
+offset_bottom = 1168.5278
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/Reset/Panel3"]
@@ -947,9 +948,9 @@ texture = SubResource("GradientTexture2D_jkv2x")
 [node name="Panel4" type="Panel" parent="CanvasLayer/UI/Reset"]
 layout_mode = 0
 offset_left = 432.0
-offset_top = 648.0
+offset_top = 560.4565
 offset_right = 576.0
-offset_bottom = 1296.0007
+offset_bottom = 1208.4573
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/Reset/Panel4"]
@@ -962,9 +963,9 @@ texture = SubResource("GradientTexture2D_jkv2x")
 [node name="Panel5" type="Panel" parent="CanvasLayer/UI/Reset"]
 layout_mode = 0
 offset_left = 576.0
-offset_top = 648.0
+offset_top = 580.544
 offset_right = 720.0
-offset_bottom = 1296.0
+offset_bottom = 1228.544
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/Reset/Panel5"]
@@ -977,9 +978,9 @@ texture = SubResource("GradientTexture2D_jkv2x")
 [node name="Panel6" type="Panel" parent="CanvasLayer/UI/Reset"]
 layout_mode = 0
 offset_left = 720.0
-offset_top = 648.0
+offset_top = 560.5766
 offset_right = 864.0
-offset_bottom = 1296.0
+offset_bottom = 1208.5767
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/Reset/Panel6"]
@@ -992,9 +993,9 @@ texture = SubResource("GradientTexture2D_jkv2x")
 [node name="Panel7" type="Panel" parent="CanvasLayer/UI/Reset"]
 layout_mode = 0
 offset_left = 864.0
-offset_top = 648.0
+offset_top = 575.30414
 offset_right = 1008.0
-offset_bottom = 1295.9995
+offset_bottom = 1223.3037
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/Reset/Panel7"]
@@ -1007,9 +1008,9 @@ texture = SubResource("GradientTexture2D_jkv2x")
 [node name="Panel8" type="Panel" parent="CanvasLayer/UI/Reset"]
 layout_mode = 0
 offset_left = 1008.0
-offset_top = 648.0
+offset_top = 567.4813
 offset_right = 1152.0
-offset_bottom = 1295.9999
+offset_bottom = 1215.4812
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/Reset/Panel8"]

@@ -36,7 +36,7 @@ func set_level_to(to:Node):
 	current_level = to
 
 
-@export var reset_time = 3.0
+@export var reset_time = 2.0
 var reset_timer = 0.0
 
 func _process(delta: float) -> void:
@@ -44,4 +44,4 @@ func _process(delta: float) -> void:
 		reset_timer = move_toward(reset_timer, reset_time if Input.is_action_pressed("Reset") else 0.0, delta)
 		if reset_timer >= reset_time:
 			Global.animator.play("game_to_reset")
-			reset_timer = 0.0
+			reset_timer = -1.0
