@@ -86,3 +86,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_3vyb7")
 debug_color = Color(0, 0.5950001, 0.7, 0)
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+current = true

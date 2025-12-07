@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=4 uid="uid://btr2jdlhfi8uk"]
+[gd_scene load_steps=20 format=4 uid="uid://btr2jdlhfi8uk"]
 
 [ext_resource type="Script" uid="uid://c7bsrh40uxaci" path="res://scripts/actors/pressure_plate.gd" id="1_cy0dw"]
+[ext_resource type="AudioStream" uid="uid://cxbxd583lwjt7" path="res://assets/sfx/pressure_plate.wav" id="2_m38x0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uv2xg"]
 size = Vector3(2, 0.25734863, 2)
@@ -76,6 +77,33 @@ shadow_mesh = SubResource("ArrayMesh_dh3e0")
 [sub_resource type="BoxMesh" id="BoxMesh_24wwx"]
 size = Vector3(1.8, 0.2, 1.8)
 
+[sub_resource type="Animation" id="Animation_m38x0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Switch:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_cy0dw"]
 resource_name = "down"
 length = 0.3
@@ -91,20 +119,17 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, -0.1, 0), Vector3(0, -0.22, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_m38x0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Button:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Switch:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.1, 0)]
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ivwnm"]
@@ -121,6 +146,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -0.22, 0), Vector3(0, -0.1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Switch:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lq0vt"]
@@ -196,6 +233,9 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_4m8fd")
 draw_pass_1 = SubResource("BoxMesh_ibly0")
+
+[node name="Switch" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_m38x0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

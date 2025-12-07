@@ -29,4 +29,4 @@ metadata/_custom_type_script = "uid://7b3fx46xyn03"
 
 [node name="PressurePlate" parent="." index="7" instance=ExtResource("6_f7rt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2.1, 5)
-stand_time = 4.1
+stand_time = 4.5
