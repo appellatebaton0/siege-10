@@ -396,6 +396,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_trceg"]
 resource_name = "start"
+length = 0.608
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

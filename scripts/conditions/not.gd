@@ -4,10 +4,8 @@ class_name NOT extends Condition
 
 func _ready() -> void:
 	if input == null:
-		print("LOOKING")
 		for child in get_children(): if child is Condition:
 			input = child
-			print("FOUND ", child)
 			break
 
 func value() -> bool:
