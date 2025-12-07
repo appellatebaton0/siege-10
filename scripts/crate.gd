@@ -13,7 +13,7 @@ func _by_dist_to_player(a:Node3D, b:Node3D):
 	return a_dist < b_dist
 
 func _physics_process(_delta: float) -> void:
-	
+	if player == null: return
 	
 	player_stopper.disabled = not $WallCheck.is_colliding()
 	

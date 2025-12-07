@@ -10,4 +10,4 @@ func _ready() -> void:
 		
 		add_child(new)
 	
-	columns = ceil(sqrt(len(Global.level_scenes)))
+	#columns = ceil(sqrt(len(Global.level_scenes)))
