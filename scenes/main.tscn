@@ -764,8 +764,8 @@ theme_override_constants/separation = 40
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 60
-text = "[SIEGE WEEK 10]"
+theme_override_font_sizes/font_size = 100
+text = "B l o g i c k"
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/StartScreen/MarginContainer/VBoxContainer"]
