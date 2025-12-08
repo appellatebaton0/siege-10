@@ -9,7 +9,7 @@ var animator:AnimationPlayer
 var current_level:Node
 var current_level_scene:PackedScene
 
-var level_beat_index := INF
+var level_beat_index := 0
 
 var level_scenes := get_level_scenes()
 func get_level_scenes(path := LEVELS_PATH) -> Array[PackedScene]:
@@ -20,6 +20,9 @@ func get_level_scenes(path := LEVELS_PATH) -> Array[PackedScene]:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
+			
+			file_name = file_name.replace(".remap", "")
+			
 			if dir.current_is_dir():
 				response.append_array(get_level_scenes(path + file_name + "/"))
 			else:
